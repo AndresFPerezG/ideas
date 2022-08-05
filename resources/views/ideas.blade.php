@@ -3,8 +3,8 @@
             Ideas
     </x-slot>
 
-    <div>
-        hola
+    <div class="m-4">
+        @livewire('ideas-component')
     </div>
     
 </x-app>
