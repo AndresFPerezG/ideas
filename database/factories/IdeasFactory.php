@@ -17,11 +17,10 @@ class IdeasFactory extends Factory
      */
     public function definition()
     {
-        $faker = Faker\Factory::create();
         return [
-            'title' => $faker->title(),
-            'description' => $faker->sentence(),
-            'author' => $faker->author(),
+            'title' => fake()->text(15),
+            'description' => fake()->sentence(),
+            'author' => fake()->name(),
         ];
     }
 }
