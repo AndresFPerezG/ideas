@@ -1,3 +1,5 @@
 <div>
-    <h1>Hola, Ideas...</h1>
+    <div>
+        @include('livewire.table')
+    </div>
 </div>
