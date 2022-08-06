@@ -7,15 +7,6 @@
 
         <title>{{ $title ?? 'Awesome Ideas' }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
-
-        {{-- Icons --}}
-        <script src="https://kit.fontawesome.com/e6c839cb47.js" crossorigin="anonymous"></script>
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
         {{-- Styles --}}
         <script src="https://cdn.tailwindcss.com"></script> {{-- tailwindcss --}}
         @livewireStyles
