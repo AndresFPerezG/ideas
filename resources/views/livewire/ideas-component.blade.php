@@ -4,24 +4,24 @@
     </div>
 
     @if ( $successMessage )
-        <div class="flex px-3 py-px font-semibold justify-between bg-teal-300 rounded-xl items-center mx-auto w-1/5 tracking-wider">
+        <div class="flex px-3 py-px font-semibold justify-between bg-teal-200 rounded-xl items-center mx-auto w-1/5 tracking-wider">
            <div class="flex items-center">
                <i class="fa-solid fa-check pr-4 font-bold"></i>
                {{ $successMessage }}
            </div>
             <div class="flex">
-                <button type="button" wire:click="$set('successMessage', null)" class="font-semibold px-2 py-2 rounded-md hover:bg-teal-200"><i class="fa-solid fa-xmark"></i></button>
+                <button type="button" wire:click="$set('successMessage', null)" class="font-semibold px-2 py-2 rounded-md hover:bg-teal-100"><i class="fa-solid fa-xmark"></i></button>
             </div>
         </div>
 
     @elseif( $deleteMessage )
-        <div class="flex px-3 py-px font-semibold justify-between bg-rose-300 rounded-xl items-center mx-auto w-1/5 tracking-wider">
+        <div class="flex px-3 py-px font-semibold justify-between bg-rose-200 rounded-xl items-center mx-auto w-1/5 tracking-wider">
             <div class="flex items-center">
                 <i class="fa-solid fa-exclamation pr-4 font-bold"></i>
                 {{ $deleteMessage }}
             </div>
             <div class="flex">
-                <button type="button" wire:click="$set('deleteMessage', null)" class="font-semibold px-2 py-2 rounded-md hover:bg-rose-200"><i class="fa-solid fa-xmark"></i></button>
+                <button type="button" wire:click="$set('deleteMessage', null)" class="font-semibold px-2 py-2 rounded-md hover:bg-rose-100"><i class="fa-solid fa-xmark"></i></button>
             </div>
         </div>
     @endif

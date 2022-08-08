@@ -14,6 +14,19 @@ class IdeasComponent extends Component
 
     public $view = 'create';
 
+    protected $rules = [
+        'title' => 'required|min:6|max:35',
+        'author' => 'required|max:15',
+        'description' => 'required|min:5|max:255',
+    ];
+
+    //Hook to validate fields values real-time
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+
+    }
+
     public function render()
     {
         return view('livewire.ideas-component', [
@@ -23,7 +36,7 @@ class IdeasComponent extends Component
 
     public function store()
    {
-        $this->validate(['title' => 'required', 'author' => 'required', 'description' => 'required']);
+        $this->validate();
 
         Ideas::create([
             'title' => $this->title,
