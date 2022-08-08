@@ -10,8 +10,11 @@
         <script src="https://kit.fontawesome.com/29abcddc05.js" crossorigin="anonymous"></script>
 
         {{-- Styles --}}
+        @vite(['resources/js/app.js']) {{-- To load alpineJS --}}
+
         <script src="https://cdn.tailwindcss.com"></script> {{-- tailwindcss --}}
-        @livewireStyles
+        
+        @livewireStyles {{-- Livewire --}}
         
     </head>
     <body class="font-sans antialiased">
