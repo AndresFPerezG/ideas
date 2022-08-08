@@ -7,6 +7,8 @@
 
         <title>{{ $title ?? 'Awesome Ideas' }}</title>
 
+        <script src="https://kit.fontawesome.com/29abcddc05.js" crossorigin="anonymous"></script>
+
         {{-- Styles --}}
         <script src="https://cdn.tailwindcss.com"></script> {{-- tailwindcss --}}
         @livewireStyles

@@ -32,6 +32,8 @@ class IdeasComponent extends Component
         ]);
 
         $this->default();
+
+        session()->flash('success_message', 'Idea successfully saved.');
    }
 
    
