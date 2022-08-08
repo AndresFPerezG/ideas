@@ -10,7 +10,7 @@ class IdeasComponent extends Component
 {
     use WithPagination;
 
-    public $idea_id, $title, $author, $description;
+    public $idea_id, $title, $author, $description, $successMessage, $deleteMessage;
 
     public $view = 'create';
 
@@ -31,9 +31,11 @@ class IdeasComponent extends Component
             'description' => $this->description
         ]);
 
+        $this->successMessage = 'Idea successfully saved';
+
         $this->default();
 
-        session()->flash('success_message', 'Idea successfully saved.');
+        /* session()->flash('success_message', 'Idea successfully saved.'); */
    }
 
    
@@ -61,12 +63,18 @@ class IdeasComponent extends Component
             'description' => $this->description
         ]);
 
+        $this->successMessage = 'Idea successfully updated';
+
         $this->default();
+
+        /* session()->flash('$successMessage', 'Idea successfully updated'); */
     }
     
     public function destroy($id)
     {
         Ideas::destroy($id);
+
+        $this->deleteMessage = 'The Idea was successfully deleted';
     }
     
     public function default()
@@ -74,7 +82,5 @@ class IdeasComponent extends Component
         $this->title = '';
         $this->author = '';
         $this->description = '';
-
-        $this->view = 'create';
     }
 }
