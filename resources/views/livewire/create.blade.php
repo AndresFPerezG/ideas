@@ -7,7 +7,7 @@
         </div>
         <div class="flex justify-end">
             <div class="flex justify-end mr-6 my-6 w-5/4">
-                <button wire:click="store" class="px-4 py-2 font-medium bg-teal-400 hover:bg-teal-300 rounded-md mx-2 my-2">Save</button>
+                <button x-on:click="open = ! open" wire:click="store" class="px-4 py-2 font-medium bg-teal-400 hover:bg-teal-300 rounded-md mx-2 my-2">Save</button>
             </div>
         </div>
     </div>

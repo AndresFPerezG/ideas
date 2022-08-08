@@ -7,10 +7,10 @@
         </div>
         <div class="flex justify-end">
             <div class="flex justify-end mr-6 my-6 w-5/4">
-                <button wire:click="update" class="px-4 py-2 font-medium bg-teal-400 hover:bg-teal-300 rounded-md mx-2 my-2">Update</button>
+                <button x-on:click="open = ! open" wire:click="update" class="px-4 py-2 font-medium bg-teal-400 hover:bg-teal-300 rounded-md mx-2 my-2">Update</button>
             </div>
             <div class="flex justify-end mr-6 my-6 w-5/4 bg-slate-50">
-                <button wire:click="default" class="px-4 py-2 font-medium border-2 border-rose-200 hover:bg-rose-300 rounded-md mx-2 my-2">Cancel</button>
+                <button x-on:click="open = ! open" wire:click="default" class="px-4 py-2 font-medium border-2 border-rose-200 hover:bg-rose-300 rounded-md mx-2 my-2">Cancel</button>
             </div>
         </div>
     </div>
