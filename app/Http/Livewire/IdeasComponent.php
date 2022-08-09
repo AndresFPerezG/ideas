@@ -10,9 +10,22 @@ class IdeasComponent extends Component
 {
     use WithPagination;
 
-    public $idea_id, $title, $author, $description;
+    public $idea_id, $title, $author, $description, $successMessage, $deleteMessage;
 
     public $view = 'create';
+
+    protected $rules = [
+        'title' => 'required|min:6|max:35',
+        'author' => 'required|max:15',
+        'description' => 'required|min:5|max:255',
+    ];
+
+    //Hook to validate fields values real-time
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+
+    }
 
     public function render()
     {
@@ -23,7 +36,7 @@ class IdeasComponent extends Component
 
     public function store()
    {
-        $this->validate(['title' => 'required', 'author' => 'required', 'description' => 'required']);
+        $this->validate();
 
         Ideas::create([
             'title' => $this->title,
@@ -31,7 +44,11 @@ class IdeasComponent extends Component
             'description' => $this->description
         ]);
 
+        $this->successMessage = 'Idea successfully saved';
+
         $this->default();
+
+        /* session()->flash('success_message', 'Idea successfully saved.'); */
    }
 
    
@@ -59,12 +76,18 @@ class IdeasComponent extends Component
             'description' => $this->description
         ]);
 
+        $this->successMessage = 'Idea successfully updated';
+
         $this->default();
+
+        /* session()->flash('$successMessage', 'Idea successfully updated'); */
     }
     
     public function destroy($id)
     {
         Ideas::destroy($id);
+
+        $this->deleteMessage = 'The Idea was successfully deleted';
     }
     
     public function default()
@@ -72,7 +95,5 @@ class IdeasComponent extends Component
         $this->title = '';
         $this->author = '';
         $this->description = '';
-
-        $this->view = 'create';
     }
 }
